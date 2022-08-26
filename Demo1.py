@@ -1,6 +1,6 @@
 '''
 Demo1: Einfaches Demo einer Funktion mit einem Parameter und einem Rückgabenwert
-Test
+Test2
 '''
 
 
