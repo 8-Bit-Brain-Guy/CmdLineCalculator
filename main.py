@@ -4,4 +4,4 @@ def test(z):
 
 
 if __name__ == '__main__':
-    print(test(100)
+    print(test(100))
