@@ -2,13 +2,15 @@
 Ein einfacher Taschenrechner mit grafischer Oberfläche.
 
 ---
-Ausführen des Programms:  
+
+Ausführen des Programms: 
 python Main.py
-<br>
+
 Hilfe zu den Befehlen bekommt man so:
 python Main.py -H bzw. --help
+
 ---
-<br>
+
 
 Ein paar nützliche Git-Befehle:
 
