@@ -1,12 +1,15 @@
 # Taschenrechner
 Ein einfacher Taschenrechner mit grafischer Oberfläche.
 
---------------------------------------
-Ausführen des Demoskriptes:  
-python demo1.py
+---
+Ausführen des Programms:  
+python Main.py
+<br>
+Hilfe zu den Befehlen bekommt man so:
+python Main.py -H bzw. --help
+---
+<br>
 
-
---------------------------------------
 Ein paar nützliche Git-Befehle:
 
 Dieses Repository herunter laden:<br>
