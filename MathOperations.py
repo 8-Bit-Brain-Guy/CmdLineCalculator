@@ -1,30 +1,30 @@
-def addition(zahl1, zahl2):
-    print("Der übergebene Wert ist: %d" %zahl1, "und %d" %zahl2)
-    return zahl1 + zahl2
+class MathOperations:
 
-rueckgabewert = addition(25,25)    
-print("Der Rueckgabewert ist %d" %rueckgabewert)
+    def __init__(self):
+        self.__zahl = 100
+        self.z = 111
 
-
-def subtraktion(zahl1,zahl2):
-    print("Der übergebene Wert ist: %d" %zahl1, "und %d" %zahl2)
-    return zahl1 - zahl2
-
-rueckgabewert = subtraktion(25,25)    
-print("Der Rueckgabewert ist %d" %rueckgabewert)
+    def test(self, zahl1):
+        print("Der übergebene Wert ist: %d" %zahl1)
+        print("Der Wert ist: %d" %self.__zahl)
 
 
-def division(zahl1, zahl2):
-    print("Der übergebene Wert ist: %d" %zahl1, "und %d" %zahl2)
-    return zahl1 / zahl2
-
-rueckgabewert = division(25,25)    
-print("Der Rueckgabewert ist %d" %rueckgabewert)   
+    def addition(self, zahl1, zahl2):
+        print("Der übergebene Wert ist: %d" %zahl1, "und %d" %zahl2)
+        return zahl1 + zahl2
 
 
-def multiplikation(zahl1,zahl2):
-    print("Der übergebene Wert ist: %d" %zahl1, "und %d" %zahl2)
-    return zahl1 * zahl2
+    def subtraktion(self, zahl1,zahl2):
+        print("Der übergebene Wert ist: %d" %zahl1, "und %d" %zahl2)
+        return zahl1 - zahl2
 
-rueckgabewert = multiplikation(25,25)    
-print("Der Rueckgabewert ist %d" %rueckgabewert)   
+
+    def division(self, zahl1, zahl2):
+        print("Der übergebene Wert ist: %d" %zahl1, "und %d" %zahl2)
+        return zahl1 / zahl2
+
+
+    def multiplikation(self, zahl1,zahl2):
+        print("Der übergebene Wert ist: %d" %zahl1, "und %d" %zahl2)
+        return zahl1 * zahl2
+
