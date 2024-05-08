@@ -1,17 +1,33 @@
-# Taschenrechner
-Ein einfacher Taschenrechner mit grafischer Oberfläche.
-
+# Calculator
+A simple calculator with a command line interface.
 ---
 
-Ausführen des Programms:<br>
+Run the program:<br>
 `python Main.py`
 
-Hilfe zu den Befehlen bekommt man so:<br>
+Help to the command line options:<br>
 `python Main.py -H bzw. --help`
 
 ---
+<br><br>
+The following Python modules additional to the normal Python installation are needed to run the calculator. In the development versions it is necessary to install them manually. 
+
+| Module | How to install |
+| - | - |
+| readkeys | `pip install readkeys` |
+| ??? | `pip install ???` |
+
+<br>
+
+In the Release versions there will be an automatic installer for these modules or they might be contained in the installed program already.
 
 
+
+<br>
+<br>
+<br>
+
+---
 Ein paar nützliche Git-Befehle:
 
 Dieses Repository herunter laden:<br>
@@ -30,18 +46,3 @@ Eine Datei committen (muss man auch machen um sie einzufügen):
 
 Die Datei nach Github hochladen (man wir dann nach seinen Zugangsdaten für Github gefragt):  
 `git push`
-
-
----
-# Manual #
-
-The following Python modules additional to the normal Python installation are needed to run the calculator. In the development versions it is necessary to install them manually. 
-
-| Module | How to install |
-| - | - |
-| readkeys | `pip install readkeys` |
-| ??? | `pip install ???` |
-
-<br>
-
-In the Release versions there will be an automatic installer for these modules or they might be contained in the installed program already.
