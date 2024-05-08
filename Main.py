@@ -27,6 +27,8 @@ class Taschenrechner:
         self.printMenue(1)
         # wait for input on keyboard
         # key = input("Enter number: ")
+        readkeys.flush()
+        key = readkeys.getkey()
 
 
 
