@@ -12,4 +12,12 @@ Tabelle:
 
 <br>
 <br>
-TEST
+This Python modules are needed in order to run this programm:
+
+Module                                          How to install
+ - readkeys                                     pip install readkeys
+
+
+In the final Release there will be an automatic installer of this modules or they might be contained in the installed program already.
+
+
