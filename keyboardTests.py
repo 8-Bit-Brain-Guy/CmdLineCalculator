@@ -8,12 +8,12 @@ def on_key_press(event):
         keyboard.unhook_all()
 
 
-# keyboard.on_press(on_key_press)
+keyboard.on_press(on_key_press)
 
 # Halten Sie das Programm am Laufen, damit es Tastatureingaben abfragen kann
-#keyboard.wait('esc')
+keyboard.wait('esc')
 
-while True:
-    if keyboard.is_keypressed("q"):
-        print("QQQQ")
+## while True:
+##     if keyboard.is_pressed("q"):
+##         print("QQQQ")
 
