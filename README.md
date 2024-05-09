@@ -15,7 +15,7 @@ The following Python modules additional to the normal Python installation are ne
 | Module | How to install |
 | - | - |
 | readkeys | `pip install readkeys` |
-| ??? | `pip install ???` |
+| keyboard | `pip install keyboard` |
 
 <br>
 

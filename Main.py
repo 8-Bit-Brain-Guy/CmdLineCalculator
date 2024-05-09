@@ -1,9 +1,13 @@
 import os
 import time
 import readkeys
+import keyboard
 import platform
 
 ## Mathematische Funktionen später vielleicht in eine eigenen Klasse und eine eigene Datei (Modul) auslagern.
+
+
+
 
 
 class Taschenrechner:
@@ -15,6 +19,21 @@ class Taschenrechner:
         self.__num1 = None
         self.__num2 = None
         self.__res = None
+        self.__marker = 1
+        self.__exit = False
+        #self.loop()
+
+    def on_key_press(self, event):
+        print("Taste gedrückt: ", event.name)
+        print("Scan code:      ", event.scan_code)
+        print("Timestamp:      ", event.time)
+        if event.scan_code == 72:
+            self.__marker -= 1
+        elif event.scan_code == 80:
+            self.__marker += 1
+        elif event.name == 'esc':
+            self.__exit = True
+
 
 
     def clearScreen(self):
@@ -24,42 +43,25 @@ class Taschenrechner:
             os.system("clear")
 
 
-    def printMenue(self, marker):
+    def printMenue(self):
         self.clearScreen()
         print("########################################")
         print("############ Taschenrechner ############")
         print("########################################")
         print("")
-        if marker == 1: 
-            print(">>> Addition       <<<")
-            print("    Subtraktion")
-            print("    Multiplikation")
-            print("    Divison")
-            print("    Exit")
-        elif marker == 2:
-            print("    Addition")
-            print(">>> Subtraktion    <<<")
-            print("    Multiplikation")
-            print("    Divison")
-            print("    Exit")
-        elif marker == 3:
-            print("    Addition")
-            print("    Subtraktion")
-            print(">>> Multiplikation <<<")
-            print("    Divison")
-            print("    Exit")
-        elif marker == 4:
-            print("    Addition")
-            print("    Subtraktion")
-            print("    Multiplikation")
-            print(">>> Divison        <<<")
-            print("    Exit")
-        else:
-            print("    Addition")
-            print("    Subtraktion")
-            print("    Multiplikation")
-            print("    Divison")
-            print(">>> Exit           <<<")
+        if self.__marker == 1: 
+            print(">>>  Calculate  <<<")
+            print("     Print")
+            print("     Exit")
+        elif self.__marker == 2:
+            print("     Calculate")
+            print(">>>  Print      <<<")
+            print("     Exit")
+        elif self.__marker == 3:
+            print("      Calculate")
+            print("      Print")
+            print(">>>   Exit           <<<")
+
 
 
     def printOperationView(self):
@@ -73,24 +75,16 @@ class Taschenrechner:
             self.__res = self.addition(self.__num1, self.__num2)
             print(" = %f" %self.__res )
 
+
+
     def loop(self):
-        # wait for input on keyboard
-        # key = input("Enter number: ")
-#        readkeys.flush()
-#        key = readkeys.getkey()
+        while (self.__exit == False):
+            keyboard.on_press(self.on_key_press)
+            self.printMenue()            
+            keyboard.wait('esc')    
+            keyboard.unhook_all()
 
-        i = 17
-        while i < 6:
-            self.printMenue(i)
-            time.sleep(0.5)
-            i+=1
-        self.__mathMethod = 'add'
-        self.printOperationView()
-
-####        key = 1
-####        if key == 1:
-####            self.__mathMethod = 'add'
-####            self.printOperationView()
+        # 
 
 
 
@@ -112,8 +106,3 @@ class Taschenrechner:
 if __name__ == '__main__':
     Tr = Taschenrechner()
     Tr.loop()
-
-
-
-
-
