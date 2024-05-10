@@ -1,3 +1,28 @@
+
+def addition(self, zahl1, zahl2):
+    print("Der übergebene Wert ist: %d" %zahl1, "und %d" %zahl2)
+    return zahl1 + zahl2
+
+
+def subtraktion(self, zahl1,zahl2):
+    print("Der übergebene Wert ist: %d" %zahl1, "und %d" %zahl2)
+    return zahl1 - zahl2
+
+
+def division(self, zahl1, zahl2):
+    print("Der übergebene Wert ist: %d" %zahl1, "und %d" %zahl2)
+    return zahl1 / zahl2
+
+
+def multiplikation(self, zahl1,zahl2):
+    print("Der übergebene Wert ist: %d" %zahl1, "und %d" %zahl2)
+    return zahl1 * zahl2
+
+
+
+
+
+
 class MathOperations:
 
     def __init__(self):

@@ -3,11 +3,11 @@ import time
 import readkeys
 import keyboard
 import platform
+from MathOperations import *
+
+
 
 ## Mathematische Funktionen später vielleicht in eine eigenen Klasse und eine eigene Datei (Modul) auslagern.
-
-
-
 
 
 class Taschenrechner:
@@ -18,10 +18,13 @@ class Taschenrechner:
         self.__operatingSystem = platform.system()
         self.__num1 = None
         self.__num2 = None
+        self.__op = None
         self.__res = None
         self.__marker = 1
         self.__exit = False
-        #self.loop()
+        self.__mathOP = MathOperations()
+
+
 
     def on_key_press(self, event):
         print("Taste gedrückt: ", event.name)
@@ -41,6 +44,7 @@ class Taschenrechner:
             os.system("cls")
         else:
             os.system("clear")
+
 
 
     def printMenue(self):
@@ -76,6 +80,35 @@ class Taschenrechner:
             print(" = %f" %self.__res )
 
 
+    def parseInputString(self):
+        # a = input("Enter number: ")                                 # a = '123': a wird als class 'str' behandelt. int(a)+1 = 124
+        inp = input("> ")
+        print(inp)
+        
+        # Eleminate all spaces in inputstring so that they will not have to be handeled later
+        if " " in inp:
+            pass
+
+        # Find mathematical operator
+        if "+" in inp:
+            self.__op = "+"
+        elif "-" in inp:
+            self.__op = "-"
+        elif "*" in inp:
+            self.__op = "*"
+        elif "/" in inp:
+            self.__op = "/"
+        else:
+            self.__op = -1
+
+        # Extract first and second number:
+        self.__num1 = inp[0 : inp.find(self.__op)]
+        self.__num2 = inp[inp.find(self.__op)+1 : len(inp)]
+        # print(self.__num1)
+        # print(self.__num2)
+
+
+
 
     def loop(self):
         while (self.__exit == False):
@@ -84,25 +117,9 @@ class Taschenrechner:
             keyboard.wait('esc')    
             keyboard.unhook_all()
 
-        # 
-
-
-
-    def addition(self, zahl1, zahl2):
-        return zahl1 + zahl2
-    
-    def subtraktion(self, zahl1,zahl2):
-        return zahl1 - zahl2
-    
-    def multiplikation(self, zahl1,zahl2):
-        return zahl1 * zahl2
-
-    def division(self, zahl1, zahl2):
-        return zahl1 / zahl2
-
-
 
 
 if __name__ == '__main__':
     Tr = Taschenrechner()
-    Tr.loop()
+    Tr.parseInputString()
+    # Tr.loop()
