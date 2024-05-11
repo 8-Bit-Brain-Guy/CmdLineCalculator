@@ -9,7 +9,7 @@ Help to the command line options:<br>
 `python Main.py -H bzw. --help`
 
 ---
-<br><br>
+<br>
 The following Python modules additional to the normal Python installation are needed to run the calculator. In the development versions it is necessary to install them manually. 
 
 | Module | How to install |
