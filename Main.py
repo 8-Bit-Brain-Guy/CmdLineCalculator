@@ -23,6 +23,7 @@ class Taschenrechner:
         self.__marker = 1
         self.__exit = False
         self.__mathOP = MathOperations()
+        self.__scanCode = None
 
 
 
@@ -52,6 +53,8 @@ class Taschenrechner:
         print("########################################")
         print("############ Taschenrechner ############")
         print("########################################")
+        print("")
+        print("Alternatively press ESC to exit the program...")
         print("")
         if self.__marker == 1: 
             print(">>>  Calculate  <<<")
@@ -112,14 +115,14 @@ class Taschenrechner:
 
     def loop(self):
         while (self.__exit == False):
-            keyboard.on_press(self.on_key_press)
             self.printMenue()            
+            keyboard.on_press(self.on_key_press)
             keyboard.wait('esc')    
-            keyboard.unhook_all()
+            # keyboard.unhook_all()
 
 
 
 if __name__ == '__main__':
     Tr = Taschenrechner()
-    Tr.parseInputString()
-    # Tr.loop()
+    # Tr.parseInputString()
+    Tr.loop()
