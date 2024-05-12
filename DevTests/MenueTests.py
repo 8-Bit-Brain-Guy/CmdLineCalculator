@@ -1,28 +1,33 @@
 import keyboard
+import os
 
 value = None
+__marker = 1
 
-def printMenue(self):
-    self.clearScreen()
+def clearScreen():
+    os.system("cls")
+
+
+def printMenue():
+    clearScreen()
     print("########################################")
     print("############ Taschenrechner ############")
     print("########################################")
     print("")
     print("Alternatively press ESC to exit the program...")
     print("")
-    if self.__marker == 1: 
+    if __marker == 1: 
         print(">>>  Calculate  <<<")
         print("     Print")
         print("     Exit")
-    elif self.__marker == 2:
+    elif __marker == 2:
         print("     Calculate")
         print(">>>  Print      <<<")
         print("     Exit")
-    elif self.__marker == 3:
+    elif __marker == 3:
         print("      Calculate")
         print("      Print")
         print(">>>   Exit           <<<")
-
 
 
 def on_key_press(event):
@@ -35,6 +40,11 @@ def on_key_press(event):
 
 
 keyboard.on_press(on_key_press)
+
+
+clearScreen()
+printMenue()
+
 
 # Halten Sie das Programm am Laufen, damit es Tastatureingaben abfragen kann
 keyboard.wait('esc')
